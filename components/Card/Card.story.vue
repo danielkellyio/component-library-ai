@@ -22,7 +22,7 @@ const variants = ["default", "bordered", "elevated"] as const;
         <Card>
           <CardBody>
             <h3 class="text-xl font-semibold mb-2">Simple Card</h3>
-            <p class="text-sm text-gray-300">
+            <p class="text-sm">
               This is a basic card with just a body section.
             </p>
           </CardBody>
@@ -38,7 +38,7 @@ const variants = ["default", "bordered", "elevated"] as const;
             <h3 class="text-lg font-medium">Card Title</h3>
           </CardHeader>
           <CardBody>
-            <p class="text-sm text-gray-300">
+            <p class="text-sm">
               This is a complete card with header, body, and footer sections.
               The header and footer have subtle background differences.
             </p>
@@ -58,7 +58,7 @@ const variants = ["default", "bordered", "elevated"] as const;
     <Variant title="Card Variants">
       <div class="p-6 rounded-lg grid grid-cols-1 gap-6">
         <div v-for="variant in variants" :key="variant">
-          <h4 class="text-sm uppercase tracking-wider text-gray-400 mb-2">
+          <h4 class="text-sm uppercase tracking-wider mb-2">
             {{ variant }}
           </h4>
           <Card :variant="variant">
@@ -66,7 +66,7 @@ const variants = ["default", "bordered", "elevated"] as const;
               <h3 class="text-lg font-medium">{{ variant }} Card</h3>
             </CardHeader>
             <CardBody>
-              <p class="text-sm text-gray-300">
+              <p class="text-sm">
                 This card uses the {{ variant }} variant styling.
               </p>
             </CardBody>
@@ -89,7 +89,7 @@ const variants = ["default", "bordered", "elevated"] as const;
               </div>
               <div>
                 <h3 class="text-xl font-semibold mb-1">Hover Me</h3>
-                <p class="text-sm text-gray-300">
+                <p class="text-sm">
                   This card has hover effects. Move your cursor over it to see
                   the animation.
                 </p>
@@ -120,7 +120,7 @@ const variants = ["default", "bordered", "elevated"] as const;
             </div>
           </CardHeader>
           <CardBody>
-            <p class="text-sm text-gray-300 mb-4">
+            <p class="text-sm mb-4">
               This card demonstrates complex content arrangement with image,
               header metadata, and action buttons in the footer.
             </p>
@@ -136,11 +136,9 @@ const variants = ["default", "bordered", "elevated"] as const;
           </CardBody>
           <CardFooter>
             <div class="flex justify-between items-center">
-              <div class="text-xs text-gray-400">Updated 2 days ago</div>
+              <div class="text-xs">Updated 2 days ago</div>
               <div class="flex gap-2">
-                <button class="text-sm text-gray-300 hover:text-white">
-                  Cancel
-                </button>
+                <button class="text-sm hover:text-white">Cancel</button>
                 <button class="text-sm text-primary-500 hover:text-primary-400">
                   View
                 </button>

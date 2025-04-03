@@ -120,7 +120,7 @@ const sizes = ["sm", "md", "lg"] as const;
             </div>
             <div>
               <div class="text-sm font-medium">New notification</div>
-              <div class="text-xs text-gray-400">You have a new message</div>
+              <div class="text-xs">You have a new message</div>
             </div>
           </div>
           <Badge variant="primary" size="sm">New</Badge>
@@ -141,7 +141,7 @@ const sizes = ["sm", "md", "lg"] as const;
           </div>
           <div>
             <div class="text-sm font-medium">Jane Smith</div>
-            <div class="text-xs text-gray-400">Online</div>
+            <div class="text-xs">Online</div>
           </div>
         </div>
 

@@ -3,6 +3,7 @@
 
 /* NOTE: ALL THEME VARIABLES ENDING WITH -content ARE FOR TEXT COLORS ON BACKGROUNDS THAT CORRESPOND TO THE VARIABLE NAME WITHOUT THE -content SUFFIX */
 
+/* Light Theme */
 @theme {
   /* ===== BASE TOKENS: FOR COLORING MOST BACKGROUNDS (NEUTRAL AND THE BULK OF THE PAGE CANVAS) ===== */
   --color-base-100: oklch(0.98 0 0);
@@ -19,6 +20,44 @@
   --color-secondary: oklch(70% 0.25 30);
   --color-secondary-gradient-mix: oklch(70% 0.25 280);
   --color-secondary-content: oklch(98% 0.01 200);
+
+  /* ===== NEUTRAL COLORS: FOR COLORING LESS IMPORTANT ELEMENTS IN COMPARISON TO PRIMARY AND SECONDARY BRAND COLORS (FOR EXAMPLE: CANCEL BUTTONS) ===== */
+  --color-neutral: oklch(50% 0.05 240);
+  --color-neutral-gradient-mix: oklch(50% 0.05 280);
+  --color-neutral-content: oklch(98% 0.01 240);
+
+  /* ===== INFO STATUS COLORS: FOR COLORING INFO ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
+  --color-info: oklch(0.64 0.07 223.52);
+  --color-info-gradient-mix: oklch(0.36 0.08 283.82);
+  --color-info-content: oklch(1 0.05 208.08);
+
+  /* ===== SUCCESS STATUS COLORS: FOR COLORING SUCCESS ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
+  --color-success: oklch(0.62 0.14 134.46);
+  --color-success-gradient-mix: oklch(0.53 0.08 178.62);
+  --color-success-content: oklch(1 0.07 134.7);
+
+  /* ===== WARNING STATUS COLORS: FOR COLORING WARNING ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
+  --color-warning: oklch(0.8 0.17 75.8);
+  --color-warning-gradient-mix: oklch(0.59 0.1986 30.85);
+  --color-warning-content: oklch(1 0 0);
+
+  /* ===== ERROR STATUS COLORS: FOR COLORING ERROR ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
+  --color-error: oklch(0.64 0.23 25.37);
+  --color-error-gradient-mix: oklch(0.36 0.15 12.35);
+  --color-error-content: oklch(1 0 25.31);
+}
+
+:root {
+  --brand-status-bg-border-width: 1px;
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"],
+.htw-dark {
+  --color-base-100: oklch(25.33% 0.016 252.42);
+  --color-base-200: oklch(23.26% 0.014 253.1);
+  --color-base-300: oklch(21.15% 0.012 254.09);
+  --color-base-content: oklch(97.807% 0.029 256.847);
 
   /* ===== NEUTRAL COLORS: FOR COLORING LESS IMPORTANT ELEMENTS IN COMPARISON TO PRIMARY AND SECONDARY BRAND COLORS (FOR EXAMPLE: CANCEL BUTTONS) ===== */
   --color-neutral: oklch(50% 0.05 240);
@@ -44,19 +83,6 @@
   --color-error: oklch(0.56 0.21 25.87);
   --color-error-gradient-mix: oklch(0.36 0.15 12.35);
   --color-error-content: oklch(1 0.06 25.31);
-}
-
-:root {
-  --brand-status-bg-border-width: 1px;
-}
-
-/* Dark Theme Overrides */
-[data-theme="dark"],
-.htw-dark {
-  --color-base-100: oklch(25.33% 0.016 252.42);
-  --color-base-200: oklch(23.26% 0.014 253.1);
-  --color-base-300: oklch(21.15% 0.012 254.09);
-  --color-base-content: oklch(97.807% 0.029 256.847);
 }
 
 .success-bg {

@@ -59,23 +59,23 @@ const settingsDeveloperMode = ref(true);
     <Variant title="Toggle Variants">
       <div class="p-6 rounded-lg flex flex-col gap-4">
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">primary</span>
+          <span class="text-sm w-24">primary</span>
           <Toggle v-model="primaryToggle" variant="primary" />
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">secondary</span>
+          <span class="text-sm w-24">secondary</span>
           <Toggle v-model="secondaryToggle" variant="secondary" />
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">success</span>
+          <span class="text-sm w-24">success</span>
           <Toggle v-model="successToggle" variant="success" />
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">warning</span>
+          <span class="text-sm w-24">warning</span>
           <Toggle v-model="warningToggle" variant="warning" />
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">error</span>
+          <span class="text-sm w-24">error</span>
           <Toggle v-model="errorToggle" variant="error" />
         </div>
       </div>
@@ -85,23 +85,23 @@ const settingsDeveloperMode = ref(true);
     <Variant title="Gradient Variants">
       <div class="p-6 rounded-lg flex flex-col gap-4">
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">primary</span>
+          <span class="text-sm w-24">primary</span>
           <Toggle v-model="primaryToggle" variant="primary" gradient />
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">secondary</span>
+          <span class="text-sm w-24">secondary</span>
           <Toggle v-model="secondaryToggle" variant="secondary" gradient />
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">success</span>
+          <span class="text-sm w-24">success</span>
           <Toggle v-model="successToggle" variant="success" gradient />
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">warning</span>
+          <span class="text-sm w-24">warning</span>
           <Toggle v-model="warningToggle" variant="warning" gradient />
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">error</span>
+          <span class="text-sm w-24">error</span>
           <Toggle v-model="errorToggle" variant="error" gradient />
         </div>
       </div>
@@ -111,15 +111,15 @@ const settingsDeveloperMode = ref(true);
     <Variant title="Toggle Sizes">
       <div class="p-6 rounded-lg flex flex-col gap-4">
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">sm</span>
+          <span class="text-sm w-24">sm</span>
           <Toggle v-model="smToggle" size="sm" />
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">md</span>
+          <span class="text-sm w-24">md</span>
           <Toggle v-model="mdToggle" size="md" />
         </div>
         <div class="flex items-center justify-between">
-          <span class="text-sm text-gray-300 w-24">lg</span>
+          <span class="text-sm w-24">lg</span>
           <Toggle v-model="lgToggle" size="lg" />
         </div>
       </div>
@@ -158,9 +158,7 @@ const settingsDeveloperMode = ref(true);
             <div class="flex items-center justify-between">
               <div>
                 <div class="font-medium text-sm">Notifications</div>
-                <div class="text-xs text-gray-400">
-                  Receive alerts for new messages
-                </div>
+                <div class="text-xs">Receive alerts for new messages</div>
               </div>
               <Toggle v-model="settingsNotifications" />
             </div>
@@ -170,9 +168,7 @@ const settingsDeveloperMode = ref(true);
             <div class="flex items-center justify-between">
               <div>
                 <div class="font-medium text-sm">Email Digest</div>
-                <div class="text-xs text-gray-400">
-                  Weekly summary of activity
-                </div>
+                <div class="text-xs">Weekly summary of activity</div>
               </div>
               <Toggle v-model="settingsEmailDigest" variant="secondary" />
             </div>
@@ -182,9 +178,7 @@ const settingsDeveloperMode = ref(true);
             <div class="flex items-center justify-between">
               <div>
                 <div class="font-medium text-sm">2FA Authentication</div>
-                <div class="text-xs text-gray-400">
-                  Enable additional security
-                </div>
+                <div class="text-xs">Enable additional security</div>
               </div>
               <Toggle v-model="settings2FA" variant="success" />
             </div>
@@ -194,7 +188,7 @@ const settingsDeveloperMode = ref(true);
             <div class="flex items-center justify-between">
               <div>
                 <div class="font-medium text-sm">Developer Mode</div>
-                <div class="text-xs text-gray-400">
+                <div class="text-xs">
                   <span class="inline-flex items-center">
                     <Icon
                       name="heroicons:code-bracket"
@@ -213,7 +207,7 @@ const settingsDeveloperMode = ref(true);
         <div class="max-w-xs mx-auto bg-white/5 rounded-2xl p-4">
           <div class="flex items-center justify-between mb-6">
             <h4 class="text-base font-medium">Quick Settings</h4>
-            <Icon name="heroicons:cog-6-tooth" class="h-5 w-5 text-gray-400" />
+            <Icon name="heroicons:cog-6-tooth" class="h-5 w-5" />
           </div>
           <div class="grid grid-cols-2 gap-4">
             <div
