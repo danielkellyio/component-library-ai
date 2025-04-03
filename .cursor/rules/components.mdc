@@ -1,0 +1,24 @@
+---
+description: 
+globs: components/**/*.vue
+alwaysApply: false
+---
+
+# Component Rules
+
+- All components should exist in the `/components` directory
+- They should be documented in the `/content/components` directory and mirror the file structure from the components directory
+- Each component should exist in it's own folder and be prefixed by it's folder name. The folder can also include sublementary components that are only meant for use within the slot of the main component. And example of this structure is as follows:
+
+```
+- components
+    - Modal
+        - Modal.vue
+        - ModalBody.vue
+        - ModalHead.vue
+        - ModalActions.vue
+```
+
+- Each component should also include a histoire story in the same directory as it's defined
+- Use inline tailwind classes to style. Never use @apply
+- There are custom tailwind colors for primary, secondary and neural and they all have a 50 - 900 shade
