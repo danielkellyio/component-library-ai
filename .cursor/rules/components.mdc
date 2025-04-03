@@ -19,6 +19,10 @@ alwaysApply: false
         - ModalActions.vue
 ```
 
+- No need to import vue functions like ref, they are auto-imported
+- If using a prop named class, make sure to alway reference it as `props.class` and NEVER just `class` in the template.
 - Each component should also include a histoire story in the same directory as it's defined
-- Use inline tailwind classes to style. Never use @apply
-- There are custom tailwind colors for primary, secondary and neural and they all have a 50 - 900 shade
+
+## Component Styles
+- Use inline tailwind classes to style. NEVER use @apply. If you need to use a tailwind color in the style section you can do so with a css custom property like this: var(--color-primary)
+- Brand theme colors and status colors all have a main color and a gradient mix color. Elements that have brand or status colored backgrounds should always include a solid and a gradient version where the main color and gradient mix colors form a gradient

@@ -1,13 +1,23 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
-import { useMouseInElement } from "@vueuse/core";
+import { computed } from "vue";
 
 interface Props {
-  variant?: "primary" | "secondary" | "outline" | "ghost";
+  variant?:
+    | "default"
+    | "primary"
+    | "secondary"
+    | "accent"
+    | "neutral"
+    | "success"
+    | "warning"
+    | "error"
+    | "info";
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
   loading?: boolean;
   type?: "button" | "submit" | "reset";
+  class?: string;
+  rounded?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -16,93 +26,56 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false,
   loading: false,
   type: "button",
+  rounded: false,
 });
 
-const buttonRef = ref<HTMLButtonElement | null>(null);
-const { elementX: mouseX, elementY: mouseY } = useMouseInElement(buttonRef);
-
-const mousePosition = computed(() => ({
-  "--mouse-x": `${mouseX.value}px`,
-  "--mouse-y": `${mouseY.value}px`,
-}));
-
 const baseClasses = computed(() => [
-  "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 relative overflow-hidden",
+  "inline-flex items-center justify-center font-medium transition-all duration-200",
   "focus:outline-none focus:ring-2 focus:ring-offset-2",
   "disabled:opacity-50 disabled:cursor-not-allowed",
-  "backdrop-blur-sm shadow-lg",
-  // Size variants
   {
-    "px-3 py-1.5 text-sm": props.size === "sm",
-    "px-4 py-2 text-base": props.size === "md",
-    "px-6 py-3 text-lg": props.size === "lg",
-  },
-  // Style variants
-  {
-    "bg-gradient-to-br from-primary-500/90 via-primary-600/90 to-primary-700/90 text-white hover:from-primary-600/90 hover:via-primary-700/90 hover:to-primary-800/90 focus:ring-primary-500 hover:shadow-primary-500/20 hover:shadow-xl border border-white/10":
+    "rounded-md": !props.rounded,
+    "rounded-full": props.rounded,
+    // Size variants
+    "px-3 py-1 text-xs": props.size === "sm",
+    "px-4 py-2 text-sm": props.size === "md",
+    "px-5 py-2.5 text-base": props.size === "lg",
+    // Style variants
+    "bg-base-300 text-base-content hover:bg-base-200 focus:ring-base-200":
+      props.variant === "default",
+    "bg-primary text-primary-content hover:bg-primary/90 active:bg-primary/80 focus:ring-primary/30":
       props.variant === "primary",
-    "bg-gradient-to-br from-secondary-500/90 via-secondary-600/90 to-secondary-700/90 text-white hover:from-secondary-600/90 hover:via-secondary-700/90 hover:to-secondary-800/90 focus:ring-secondary-500 hover:shadow-secondary-500/20 hover:shadow-xl border border-white/10":
+    "bg-secondary text-secondary-content hover:bg-secondary/90 active:bg-secondary/80 focus:ring-secondary/30":
       props.variant === "secondary",
-    "bg-white/10 border-2 border-primary-500/50 text-primary-600 hover:bg-primary-50/20 focus:ring-primary-500 hover:shadow-primary-500/20 hover:shadow-lg":
-      props.variant === "outline",
-    "bg-white/5 text-primary-600 hover:bg-primary-50/20 focus:ring-primary-500 hover:shadow-primary-500/10 hover:shadow-lg":
-      props.variant === "ghost",
+    "bg-accent text-accent-content hover:bg-accent/90 active:bg-accent/80 focus:ring-accent/30":
+      props.variant === "accent",
+    "bg-neutral text-neutral-content hover:bg-neutral/90 active:bg-neutral/80 focus:ring-neutral/30":
+      props.variant === "neutral",
+    "bg-info text-info-content hover:bg-info/90 active:bg-info/80 focus:ring-info/30":
+      props.variant === "info",
+    "bg-success text-success-content hover:bg-success/90 active:bg-success/80 focus:ring-success/30":
+      props.variant === "success",
+    "bg-warning text-warning-content hover:bg-warning/90 active:bg-warning/80 focus:ring-warning/30":
+      props.variant === "warning",
+    "bg-error text-error-content hover:bg-error/90 active:bg-error/80 focus:ring-error/30":
+      props.variant === "error",
   },
+  props.class,
 ]);
 </script>
 
 <template>
   <button
-    ref="buttonRef"
-    :type="type"
-    :disabled="disabled || loading"
+    :type="props.type"
+    :disabled="props.disabled || props.loading"
     :class="baseClasses"
-    :style="mousePosition"
   >
-    <div class="light-effect" />
-
     <span
-      v-if="loading"
-      class="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-primary-200 border-t-primary-600"
-    >
-      <Icon name="heroicons:arrow-path" class="h-4 w-4" />
-    </span>
+      v-if="props.loading"
+      class="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-primary-content/30 border-t-primary-content"
+    />
     <slot name="before" />
     <slot />
     <slot name="after" />
   </button>
 </template>
-
-<style scoped>
-.light-effect {
-  pointer-events: none;
-  position: absolute;
-  inset: -100%;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  background: radial-gradient(
-    circle at var(--mouse-x, 0) var(--mouse-y, 0),
-    rgba(255, 255, 255, 0.4) 0%,
-    transparent 60%
-  );
-  mix-blend-mode: soft-light;
-}
-
-button:hover .light-effect {
-  opacity: 1;
-}
-
-/* Ensure the button contents stay above the light effect */
-button {
-  isolation: isolate;
-}
-
-.light-effect {
-  z-index: 1;
-}
-
-slot {
-  z-index: 2;
-  position: relative;
-}
-</style>

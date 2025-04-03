@@ -1,48 +1,55 @@
+/* Claude Theme Design Tokens */
+@import "tailwindcss";
+
+/* NOTE: ALL THEME VARIABLES ENDING WITH -content ARE FOR TEXT COLORS ON BACKGROUNDS THAT CORRESPOND TO THE VARIABLE NAME WITHOUT THE -content SUFFIX */
+
 @theme {
+  /* ===== BASE TOKENS: FOR COLORING MOST BACKGROUNDS (NEUTRAL AND THE BULK OF THE PAGE CANVAS) ===== */
+  --color-base-100: oklch(98% 0.02 240);
+  --color-base-200: oklch(95% 0.03 240);
+  --color-base-300: oklch(92% 0.04 240);
+  --color-base-content: oklch(20% 0.05 240);
+
+  /* ===== PRIMARY BRAND COLORS: FOR COLORING PRIMARY ELEMENTS (BUTTONS, LINKS, ETC.) ===== */
+  --color-primary: oklch(0.59 0.2099 25.05); /* Red*/
+  --color-primary-gradient-mix: oklch(0.59 0.1716 42.13); /* Orange*/
+  --color-primary-content: oklch(100% 0 0);
+
+  /* ===== SECONDARY BRAND COLORS: FOR PROVIDING CONTRAST TO PRIMARY BRAND COLORS MOSTLY FOR ACCENTS (USE SPARINGLY) ===== */
+  --color-secondary: oklch(70% 0.25 30);
+  --color-secondary-gradient-mix: oklch(70% 0.25 280);
+  --color-secondary-content: oklch(98% 0.01 200);
+
+  /* ===== NEUTRAL COLORS: FOR COLORING LESS IMPORTANT ELEMENTS IN COMPARISON TO PRIMARY AND SECONDARY BRAND COLORS (FOR EXAMPLE: CANCEL BUTTONS) ===== */
+  --color-neutral: oklch(50% 0.05 240);
+  --color-neutral-content: oklch(98% 0.01 240);
+
+  /* ===== INFO STATUS COLORS: FOR COLORING INFO ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
+  --color-info: oklch(70% 0.2 220);
+  --color-info-gradient-mix: oklch(70% 0.2 280);
+  --color-info-content: oklch(80% 0.2 220);
+
+  /* ===== SUCCESS STATUS COLORS: FOR COLORING SUCCESS ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
+  --color-success: oklch(65% 0.25 140);
+  --color-success-gradient-mix: oklch(65% 0.25 280);
+  --color-success-content: oklch(75% 0.25 140);
+
+  /* ===== WARNING STATUS COLORS: FOR COLORING WARNING ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
+  --color-warning: oklch(80% 0.25 80);
+  --color-warning-gradient-mix: oklch(80% 0.25 280);
+  --color-warning-content: oklch(90% 0.25 80);
+
+  /* ===== ERROR STATUS COLORS: FOR COLORING ERROR ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
+  --color-error: oklch(65% 0.3 30);
+  --color-error-gradient-mix: oklch(65% 0.3 280);
+  --color-error-content: oklch(75% 0.3 30);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"],
+.htw-dark {
   --color-base-100: oklch(25.33% 0.016 252.42);
   --color-base-200: oklch(23.26% 0.014 253.1);
   --color-base-300: oklch(21.15% 0.012 254.09);
   --color-base-content: oklch(97.807% 0.029 256.847);
-
-  --color-primary-50: oklch(95% 0.05 60);
-  --color-primary-100: oklch(92% 0.07 60);
-  --color-primary-200: oklch(89% 0.09 60);
-  --color-primary-300: oklch(86% 0.11 60);
-  --color-primary-400: oklch(83% 0.13 60);
-  --color-primary-500: oklch(80% 0.15 60); /* #F2915F */
-  --color-primary-600: oklch(77% 0.17 60);
-  --color-primary-700: oklch(74% 0.19 60);
-  --color-primary-800: oklch(71% 0.21 60);
-  --color-primary-900: oklch(68% 0.23 60);
-
-  --color-secondary-50: oklch(98% 0.045 332.5);
-  --color-secondary-100: oklch(96% 0.065 332.5);
-  --color-secondary-200: oklch(94% 0.085 332.5);
-  --color-secondary-300: oklch(92% 0.105 332.5);
-  --color-secondary-400: oklch(90% 0.125 332.5);
-  --color-secondary-500: oklch(67.8% 0.276 332.5); /* #EB16D3 */
-  --color-secondary-600: oklch(64% 0.296 332.5);
-  --color-secondary-700: oklch(60% 0.316 332.5);
-  --color-secondary-800: oklch(56% 0.336 332.5);
-  --color-secondary-900: oklch(52% 0.356 332.5);
-
-  --color-neutral-50: oklch(98% 0.02 280);
-  --color-neutral-100: oklch(95% 0.03 280);
-  --color-neutral-200: oklch(90% 0.04 280);
-  --color-neutral-300: oklch(85% 0.05 280);
-  --color-neutral-400: oklch(75% 0.06 280);
-  --color-neutral-500: oklch(42% 0.07 280); /* #36366B */
-  --color-neutral-600: oklch(35% 0.08 280);
-  --color-neutral-700: oklch(30% 0.09 280);
-  --color-neutral-800: oklch(25% 0.1 280);
-  --color-neutral-900: oklch(20% 0.11 280);
-
-  --color-info: oklch(74% 0.16 232.661);
-  --color-info-content: oklch(29% 0.066 243.157);
-  --color-success: oklch(76% 0.177 163.223);
-  --color-success-content: oklch(37% 0.077 168.94);
-  --color-warning: oklch(82% 0.189 84.429);
-  --color-warning-content: oklch(41% 0.112 45.904);
-  --color-error: oklch(71% 0.194 13.428);
-  --color-error-content: oklch(27% 0.105 12.094);
 }
