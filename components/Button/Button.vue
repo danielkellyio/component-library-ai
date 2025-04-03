@@ -1,24 +1,20 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import type {
+  size as ButtonSize,
+  color as ButtonColor,
+  gradient as ButtonGradient,
+} from "@/types/props";
 
 interface Props {
-  variant?:
-    | "default"
-    | "primary"
-    | "secondary"
-    | "accent"
-    | "neutral"
-    | "success"
-    | "warning"
-    | "error"
-    | "info";
-  size?: "sm" | "md" | "lg";
+  variant?: ButtonColor;
+  size?: ButtonSize;
   disabled?: boolean;
   loading?: boolean;
   type?: "button" | "submit" | "reset";
   class?: string;
   rounded?: boolean;
-  gradient?: boolean;
+  gradient?: ButtonGradient;
 }
 
 const props = withDefaults(defineProps<Props>(), {

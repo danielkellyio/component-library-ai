@@ -1,15 +1,19 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import type {
+  color as AlertColor,
+  gradient as AlertGradient,
+} from "@/types/props";
 
 export type AlertVariant = "info" | "success" | "warning" | "error";
 
 interface Props {
-  variant?: AlertVariant;
+  variant?: AlertColor;
   title?: string;
   dismissible?: boolean;
   icon?: string;
   class?: string;
-  gradient?: boolean;
+  gradient?: AlertGradient;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -25,11 +29,15 @@ const dismiss = () => {
 };
 
 const iconMap = {
+  default: "heroicons:information-circle",
+  primary: "heroicons:information-circle",
+  secondary: "heroicons:information-circle",
+  neutral: "heroicons:information-circle",
   info: "heroicons:information-circle",
   success: "heroicons:check-circle",
   warning: "heroicons:exclamation-triangle",
   error: "heroicons:x-circle",
-};
+} as const;
 
 const baseClasses = computed(() => [
   "rounded-lg p-4 backdrop-blur-sm",
