@@ -81,6 +81,32 @@ const settingsDeveloperMode = ref(true);
       </div>
     </Variant>
 
+    <!-- Gradient Variants -->
+    <Variant title="Gradient Variants">
+      <div class="p-6 rounded-lg flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-300 w-24">primary</span>
+          <Toggle v-model="primaryToggle" variant="primary" gradient />
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-300 w-24">secondary</span>
+          <Toggle v-model="secondaryToggle" variant="secondary" gradient />
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-300 w-24">success</span>
+          <Toggle v-model="successToggle" variant="success" gradient />
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-300 w-24">warning</span>
+          <Toggle v-model="warningToggle" variant="warning" gradient />
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-300 w-24">error</span>
+          <Toggle v-model="errorToggle" variant="error" gradient />
+        </div>
+      </div>
+    </Variant>
+
     <!-- Toggle Sizes -->
     <Variant title="Toggle Sizes">
       <div class="p-6 rounded-lg flex flex-col gap-4">

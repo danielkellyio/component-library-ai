@@ -8,7 +8,16 @@ const story = {
   variants: [],
 } satisfies Story;
 
-const variants = ["primary", "secondary", "outline", "ghost"] as const;
+const variants = [
+  "default",
+  "primary",
+  "secondary",
+  "neutral",
+  "info",
+  "success",
+  "warning",
+  "error",
+] as const;
 const sizes = ["sm", "md", "lg"] as const;
 </script>
 
@@ -16,9 +25,23 @@ const sizes = ["sm", "md", "lg"] as const;
   <Story :title="story.title" :layout="{ type: 'grid', width: '500px' }">
     <!-- Variants -->
     <Variant title="Variants">
-      <div class="flex gap-4">
+      <div class="flex flex-wrap gap-4">
         <Button v-for="variant in variants" :key="variant" :variant="variant">
           {{ variant }}
+        </Button>
+      </div>
+    </Variant>
+
+    <!-- Gradient Variants -->
+    <Variant title="Gradient Variants">
+      <div class="flex flex-wrap gap-4">
+        <Button
+          v-for="variant in variants.filter((v) => v !== 'default')"
+          :key="variant"
+          :variant="variant"
+          gradient
+        >
+          {{ variant }} gradient
         </Button>
       </div>
     </Variant>
@@ -43,7 +66,7 @@ const sizes = ["sm", "md", "lg"] as const;
     <!-- Icon Slots -->
     <Variant title="Icon Slots">
       <div class="flex gap-4">
-        <Button>
+        <Button variant="primary">
           <template #before>
             <Icon name="heroicons:plus" class="mr-2 h-5 w-5" />
           </template>
@@ -55,7 +78,7 @@ const sizes = ["sm", "md", "lg"] as const;
           </template>
           Next Step
         </Button>
-        <Button variant="outline">
+        <Button variant="neutral">
           <template #before>
             <Icon name="heroicons:document" class="mr-2 h-5 w-5" />
           </template>

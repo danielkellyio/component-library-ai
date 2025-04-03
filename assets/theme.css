@@ -22,27 +22,32 @@
 
   /* ===== NEUTRAL COLORS: FOR COLORING LESS IMPORTANT ELEMENTS IN COMPARISON TO PRIMARY AND SECONDARY BRAND COLORS (FOR EXAMPLE: CANCEL BUTTONS) ===== */
   --color-neutral: oklch(50% 0.05 240);
+  --color-neutral-gradient-mix: oklch(50% 0.05 280);
   --color-neutral-content: oklch(98% 0.01 240);
 
   /* ===== INFO STATUS COLORS: FOR COLORING INFO ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-info: oklch(70% 0.2 220);
-  --color-info-gradient-mix: oklch(70% 0.2 280);
-  --color-info-content: oklch(80% 0.2 220);
+  --color-info: oklch(0.42 0.05 223.69);
+  --color-info-gradient-mix: oklch(0.36 0.08 283.82);
+  --color-info-content: oklch(0.95 0.05 208.08);
 
   /* ===== SUCCESS STATUS COLORS: FOR COLORING SUCCESS ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-success: oklch(65% 0.25 140);
-  --color-success-gradient-mix: oklch(65% 0.25 280);
-  --color-success-content: oklch(75% 0.25 140);
+  --color-success: oklch(0.54 0.1 134.01);
+  --color-success-gradient-mix: oklch(0.53 0.08 178.62);
+  --color-success-content: oklch(0.97 0.07 134.7);
 
   /* ===== WARNING STATUS COLORS: FOR COLORING WARNING ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-warning: oklch(80% 0.25 80);
-  --color-warning-gradient-mix: oklch(80% 0.25 280);
-  --color-warning-content: oklch(90% 0.25 80);
+  --color-warning: oklch(0.72 0.17 72.65);
+  --color-warning-gradient-mix: oklch(0.59 0.1986 30.85);
+  --color-warning-content: oklch(1 0 0);
 
   /* ===== ERROR STATUS COLORS: FOR COLORING ERROR ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-error: oklch(65% 0.3 30);
-  --color-error-gradient-mix: oklch(65% 0.3 280);
-  --color-error-content: oklch(75% 0.3 30);
+  --color-error: oklch(0.56 0.21 25.87);
+  --color-error-gradient-mix: oklch(0.36 0.15 12.35);
+  --color-error-content: oklch(1 0.06 25.31);
+}
+
+:root {
+  --brand-status-bg-border-width: 1px;
 }
 
 /* Dark Theme Overrides */
@@ -52,4 +57,144 @@
   --color-base-200: oklch(23.26% 0.014 253.1);
   --color-base-300: oklch(21.15% 0.012 254.09);
   --color-base-content: oklch(97.807% 0.029 256.847);
+}
+
+.success-bg {
+  background-color: var(--color-success);
+  border-color: color-mix(in oklch, var(--color-success), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.success-content {
+  color: var(--color-success-content);
+}
+
+.success-bg-gradient {
+  background: linear-gradient(
+    to right,
+    var(--color-success),
+    var(--color-success-gradient-mix)
+  );
+  border-color: color-mix(in oklch, var(--color-success), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.warning-bg {
+  background-color: var(--color-warning);
+  border-color: color-mix(in oklch, var(--color-warning), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.warning-content {
+  color: var(--color-warning-content);
+}
+
+.warning-bg-gradient {
+  background: linear-gradient(
+    to right,
+    var(--color-warning),
+    var(--color-warning-gradient-mix)
+  );
+  border-color: color-mix(in oklch, var(--color-warning), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.error-bg {
+  background-color: var(--color-error);
+  border-color: color-mix(in oklch, var(--color-error), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.error-content {
+  color: var(--color-error-content);
+}
+
+.error-bg-gradient {
+  background: linear-gradient(
+    to right,
+    var(--color-error),
+    var(--color-error-gradient-mix)
+  );
+  border-color: color-mix(in oklch, var(--color-error), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.info-bg {
+  background-color: var(--color-info);
+  border-color: color-mix(in oklch, var(--color-info), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.info-content {
+  color: var(--color-info-content);
+}
+
+.info-bg-gradient {
+  background: linear-gradient(
+    to right,
+    var(--color-info),
+    var(--color-info-gradient-mix)
+  );
+  border-color: color-mix(in oklch, var(--color-info), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.primary-bg {
+  background-color: var(--color-primary);
+}
+
+.primary-content {
+  color: var(--color-primary-content);
+  border-color: color-mix(in oklch, var(--color-primary), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.primary-bg-gradient {
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-primary-gradient-mix)
+  );
+  border-color: color-mix(in oklch, var(--color-primary), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.secondary-bg {
+  background-color: var(--color-secondary);
+}
+
+.secondary-content {
+  color: var(--color-secondary-content);
+  border-color: color-mix(in oklch, var(--color-secondary), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.secondary-bg-gradient {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-secondary-gradient-mix)
+  );
+  border-color: color-mix(in oklch, var(--color-secondary), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.neutral-bg {
+  background-color: var(--color-neutral);
+}
+
+.neutral-content {
+  color: var(--color-neutral-content);
+  border-color: color-mix(in oklch, var(--color-neutral), white 20%);
+  border-width: var(--brand-status-bg-border-width);
+}
+
+.neutral-bg-gradient {
+  background: linear-gradient(
+    to right,
+    var(--color-neutral),
+    var(--color-neutral-gradient-mix)
+  );
+  border-color: color-mix(in oklch, var(--color-neutral), white 20%);
+  border-width: var(--brand-status-bg-border-width);
 }

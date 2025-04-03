@@ -25,4 +25,10 @@ alwaysApply: false
 
 ## Component Styles
 - Use inline tailwind classes to style. NEVER use @apply. If you need to use a tailwind color in the style section you can do so with a css custom property like this: var(--color-primary)
-- Brand theme colors and status colors all have a main color and a gradient mix color. Elements that have brand or status colored backgrounds should always include a solid and a gradient version where the main color and gradient mix colors form a gradient
+- Backgrounds colored with brand or status theme colors should use the proper class as defined in theme.css (for example: .primary-bg and .primary-content)
+- All components with brand or theme backgrounds should also support a gradient prop (in which case the corresponding `-bg-gradient` class should be used to style the background)
+- Text color classes should always be used based on the background colors of the element the text exists in (for example, .primary-bg should ALWAYS have `primary-content`)
+- Only brand and status colors have dedicated classes in [theme.css](mdc:assets/theme.css) (like primary-content), for all others the generated tailwind classes based on the theme variables should be used
+- When setting backgrounds with theme and status colors do NOT alter their opacity.
+- For elements with a brand or status theme background color add a border-1 around it with the main color at 50% opacity like `bg-primary/50`
+- 

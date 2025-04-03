@@ -12,7 +12,8 @@ const variants = [
   "default",
   "primary",
   "secondary",
-  "outline",
+  "neutral",
+  "info",
   "success",
   "warning",
   "error",
@@ -28,6 +29,20 @@ const sizes = ["sm", "md", "lg"] as const;
       <div class="p-6 rounded-lg flex flex-wrap gap-3">
         <Badge v-for="variant in variants" :key="variant" :variant="variant">
           {{ variant }}
+        </Badge>
+      </div>
+    </Variant>
+
+    <!-- Gradient Variants -->
+    <Variant title="Gradient Variants">
+      <div class="p-6 rounded-lg flex flex-wrap gap-3">
+        <Badge
+          v-for="variant in variants.filter((v) => v !== 'default')"
+          :key="variant"
+          :variant="variant"
+          gradient
+        >
+          {{ variant }} gradient
         </Badge>
       </div>
     </Variant>
@@ -83,7 +98,7 @@ const sizes = ["sm", "md", "lg"] as const;
           Featured
         </Badge>
 
-        <Badge variant="outline" rounded>
+        <Badge variant="neutral" rounded>
           <Icon name="heroicons:plus" class="h-3.5 w-3.5 mr-1" />
           Add More
         </Badge>
@@ -147,7 +162,7 @@ const sizes = ["sm", "md", "lg"] as const;
             <li class="flex items-center gap-2">
               <Icon name="heroicons:check" class="h-4 w-4 text-green-400" />
               API Integration
-              <Badge variant="outline" size="sm" rounded>Beta</Badge>
+              <Badge variant="neutral" size="sm" rounded>Beta</Badge>
             </li>
           </ul>
         </div>

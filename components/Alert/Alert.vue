@@ -9,11 +9,13 @@ interface Props {
   dismissible?: boolean;
   icon?: string;
   class?: string;
+  gradient?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   variant: "info",
   dismissible: false,
+  gradient: false,
 });
 
 const visible = ref(true);
@@ -29,48 +31,20 @@ const iconMap = {
   error: "heroicons:x-circle",
 };
 
-const colorMap = {
-  info: {
-    bg: "bg-info/10",
-    border: "border-info/30",
-    text: "text-info-content",
-    icon: "text-info-content",
-  },
-  success: {
-    bg: "bg-success/10",
-    border: "border-success/30",
-    text: "text-success-content",
-    icon: "text-success-content",
-  },
-  warning: {
-    bg: "bg-warning/10",
-    border: "border-warning/30",
-    text: "text-warning-content",
-    icon: "text-warning-content",
-  },
-  error: {
-    bg: "bg-error/10",
-    border: "border-error/30",
-    text: "text-error-content",
-    icon: "text-error-content",
-  },
-};
-
 const baseClasses = computed(() => [
   "rounded-lg p-4 backdrop-blur-sm",
   "flex gap-3 items-start",
   "border shadow-sm",
-  colorMap[props.variant].bg,
-  colorMap[props.variant].border,
+  props.gradient ? `${props.variant}-bg-gradient` : `${props.variant}-bg`,
+  `${props.variant}-content`,
+  `border-${props.variant}/50`,
   props.class,
 ]);
 
 const iconClasses = computed(() => [
   "h-5 w-5 mt-0.5",
-  colorMap[props.variant].icon,
+  `${props.variant}-content`,
 ]);
-
-const textClasses = computed(() => [colorMap[props.variant].text]);
 </script>
 
 <template>
@@ -82,10 +56,10 @@ const textClasses = computed(() => [colorMap[props.variant].text]);
     />
 
     <div class="flex-1">
-      <div v-if="title" class="font-medium mb-1" :class="textClasses">
+      <div v-if="title" class="font-medium mb-1">
         {{ title }}
       </div>
-      <div :class="!title ? textClasses : ''">
+      <div>
         <slot />
       </div>
     </div>
@@ -93,7 +67,7 @@ const textClasses = computed(() => [colorMap[props.variant].text]);
     <button
       v-if="dismissible"
       class="opacity-70 hover:opacity-100 transition-opacity"
-      :class="textClasses"
+      :class="`${props.variant}-content`"
       @click="dismiss"
     >
       <Icon name="heroicons:x-mark" class="h-5 w-5" />

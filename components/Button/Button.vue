@@ -18,6 +18,7 @@ interface Props {
   type?: "button" | "submit" | "reset";
   class?: string;
   rounded?: boolean;
+  gradient?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -27,6 +28,7 @@ const props = withDefaults(defineProps<Props>(), {
   loading: false,
   type: "button",
   rounded: false,
+  gradient: false,
 });
 
 const baseClasses = computed(() => [
@@ -43,22 +45,36 @@ const baseClasses = computed(() => [
     // Style variants
     "bg-base-300 text-base-content hover:bg-base-200 focus:ring-base-200":
       props.variant === "default",
-    "bg-primary text-primary-content hover:bg-primary/90 active:bg-primary/80 focus:ring-primary/30":
+    // Solid variants with proper theme classes
+    [props.gradient ? "primary-bg-gradient" : "primary-bg"]:
       props.variant === "primary",
-    "bg-secondary text-secondary-content hover:bg-secondary/90 active:bg-secondary/80 focus:ring-secondary/30":
+    [props.gradient ? "secondary-bg-gradient" : "secondary-bg"]:
       props.variant === "secondary",
-    "bg-accent text-accent-content hover:bg-accent/90 active:bg-accent/80 focus:ring-accent/30":
-      props.variant === "accent",
-    "bg-neutral text-neutral-content hover:bg-neutral/90 active:bg-neutral/80 focus:ring-neutral/30":
+    [props.gradient ? "neutral-bg-gradient" : "neutral-bg"]:
       props.variant === "neutral",
-    "bg-info text-info-content hover:bg-info/90 active:bg-info/80 focus:ring-info/30":
-      props.variant === "info",
-    "bg-success text-success-content hover:bg-success/90 active:bg-success/80 focus:ring-success/30":
+    [props.gradient ? "info-bg-gradient" : "info-bg"]: props.variant === "info",
+    [props.gradient ? "success-bg-gradient" : "success-bg"]:
       props.variant === "success",
-    "bg-warning text-warning-content hover:bg-warning/90 active:bg-warning/80 focus:ring-warning/30":
+    [props.gradient ? "warning-bg-gradient" : "warning-bg"]:
       props.variant === "warning",
-    "bg-error text-error-content hover:bg-error/90 active:bg-error/80 focus:ring-error/30":
+    [props.gradient ? "error-bg-gradient" : "error-bg"]:
       props.variant === "error",
+    // Content colors
+    "primary-content": props.variant === "primary",
+    "secondary-content": props.variant === "secondary",
+    "neutral-content": props.variant === "neutral",
+    "info-content": props.variant === "info",
+    "success-content": props.variant === "success",
+    "warning-content": props.variant === "warning",
+    "error-content": props.variant === "error",
+    // Border styles
+    "border border-primary/50": props.variant === "primary",
+    "border border-secondary/50": props.variant === "secondary",
+    "border border-neutral/50": props.variant === "neutral",
+    "border border-info/50": props.variant === "info",
+    "border border-success/50": props.variant === "success",
+    "border border-warning/50": props.variant === "warning",
+    "border border-error/50": props.variant === "error",
   },
   props.class,
 ]);
@@ -72,7 +88,7 @@ const baseClasses = computed(() => [
   >
     <span
       v-if="props.loading"
-      class="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-primary-content/30 border-t-primary-content"
+      class="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-current/30 border-t-current"
     />
     <slot name="before" />
     <slot />

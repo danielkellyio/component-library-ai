@@ -34,6 +34,27 @@ const variants = ["info", "success", "warning", "error"] as const;
       </div>
     </Variant>
 
+    <!-- Gradient Variants -->
+    <Variant title="Gradient Variants">
+      <div class="p-6 rounded-lg flex flex-col gap-4">
+        <Alert variant="info" gradient>
+          This is an informational alert with gradient background.
+        </Alert>
+
+        <Alert variant="success" gradient>
+          Your changes have been saved successfully!
+        </Alert>
+
+        <Alert variant="warning" gradient>
+          Please review your information before continuing.
+        </Alert>
+
+        <Alert variant="error" gradient>
+          An error occurred while processing your request.
+        </Alert>
+      </div>
+    </Variant>
+
     <!-- With Title -->
     <Variant title="With Title">
       <div class="p-6 rounded-lg flex flex-col gap-4">
