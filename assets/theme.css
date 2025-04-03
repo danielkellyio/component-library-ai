@@ -5,9 +5,9 @@
 
 @theme {
   /* ===== BASE TOKENS: FOR COLORING MOST BACKGROUNDS (NEUTRAL AND THE BULK OF THE PAGE CANVAS) ===== */
-  --color-base-100: oklch(98% 0.02 240);
-  --color-base-200: oklch(95% 0.03 240);
-  --color-base-300: oklch(92% 0.04 240);
+  --color-base-100: oklch(0.98 0 0);
+  --color-base-200: oklch(0.92 0 0);
+  --color-base-300: oklch(0.85 0 0);
   --color-base-content: oklch(20% 0.05 240);
 
   /* ===== PRIMARY BRAND COLORS: FOR COLORING PRIMARY ELEMENTS (BUTTONS, LINKS, ETC.) ===== */
