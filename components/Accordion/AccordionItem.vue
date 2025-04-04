@@ -69,7 +69,7 @@ const contentClasses = computed(() => [
       :class="contentClasses"
       :style="{ height: expanded ? contentHeight : '0px' }"
     >
-      <div ref="contentRef" class="p-4 pt-0">
+      <div ref="contentRef" class="p-4">
         <slot />
       </div>
     </div>
