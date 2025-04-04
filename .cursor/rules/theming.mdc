@@ -11,3 +11,4 @@ alwaysApply: false
 - Only brand and status colors have dedicated classes in @theme.css (like primary-content), for all others the generated tailwind classes based on the theme variables should be used
 - When setting backgrounds with theme and status colors do NOT alter their opacity.
 - For elements with a brand or status theme background color add a border-1 around it with the main color at 50% opacity like `bg-primary/50`
+- container queries are built into Tailwind v4

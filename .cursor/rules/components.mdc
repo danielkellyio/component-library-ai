@@ -25,3 +25,20 @@ alwaysApply: false
 
 - Always check [props.ts](mdc:types/props.ts) for commonly used props to keep our component API's consistent. If a new prop is needed for a newly created component that's likely to be needed across multiple components add it here. 
 - import props from [props.ts](mdc:types/props.ts) when possible for use in components.
+
+- All more "generic" type components should exist at the root of the components directory. 
+
+
+## "Block" Components
+
+- Blocks (or more app specific components) should exist under the folder `Component/Block/Block[ComponentName].vue` (for example, a user card, a navbar, etc)
+
+- If you are unsure if a new component should be "block" or not, just ask and wait for me to reply.
+
+- If you don't have the proper generic components to build up a block app, stop and let me know that too!
+
+
+
+
+
+

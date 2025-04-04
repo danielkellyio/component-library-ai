@@ -12,7 +12,7 @@ import Button from "./Button.vue";
 
 const story = {
   id: "components-button",
-  title: "Components/Button",
+  title: "Components/Button", // !important prefix with "Components/"
   variants: [],
 } satisfies Story;
 
