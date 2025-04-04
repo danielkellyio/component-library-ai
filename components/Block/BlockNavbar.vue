@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, nextTick } from "vue";
 
 interface Props {
   class?: string;
 }
 
 const props = defineProps<Props>();
-
 const isOpen = ref(false);
+const mobileMenuRef = ref<HTMLElement | null>(null);
 
 const links = [
   { name: "Home", href: "#", current: true },
@@ -19,6 +19,28 @@ const links = [
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
+};
+
+// Handle height calculation for transition
+const beforeEnter = (el: Element) => {
+  (el as HTMLElement).style.height = "0";
+};
+
+const enter = async (el: Element) => {
+  await nextTick();
+  const height = (el as HTMLElement).scrollHeight;
+  (el as HTMLElement).style.setProperty("--expand-height", `${height}px`);
+  (el as HTMLElement).style.height = "var(--expand-height)";
+};
+
+const beforeLeave = (el: Element) => {
+  const height = (el as HTMLElement).scrollHeight;
+  (el as HTMLElement).style.setProperty("--expand-height", `${height}px`);
+  (el as HTMLElement).style.height = "var(--expand-height)";
+};
+
+const leave = (el: Element) => {
+  (el as HTMLElement).style.height = "0";
 };
 </script>
 
@@ -85,33 +107,67 @@ const toggleMenu = () => {
       </div>
 
       <!-- Mobile menu -->
-      <div v-show="isOpen" class="border-t border-base-200 @[768px]:hidden">
-        <div class="space-y-1 px-2 pb-3 pt-2">
-          <a
-            v-for="link in links"
-            :key="link.name"
-            :href="link.href"
-            :class="[
-              'block rounded-md px-3 py-2 text-base font-medium transition-colors duration-200',
-              link.current
-                ? 'text-primary bg-primary/10'
-                : 'text-base-content/70 hover:text-primary hover:bg-base-200',
-            ]"
-          >
-            {{ link.name }}
-          </a>
+      <Transition
+        name="expand"
+        @before-enter="beforeEnter"
+        @enter="enter"
+        @before-leave="beforeLeave"
+        @leave="leave"
+      >
+        <div
+          v-show="isOpen"
+          ref="mobileMenuRef"
+          class="border-t border-base-200 @[768px]:hidden"
+        >
+          <div class="space-y-1 px-2 pb-3 pt-2">
+            <a
+              v-for="link in links"
+              :key="link.name"
+              :href="link.href"
+              :class="[
+                'block rounded-md px-3 py-2 text-base font-medium transition-colors duration-200',
+                link.current
+                  ? 'text-primary bg-primary/10'
+                  : 'text-base-content/70 hover:text-primary hover:bg-base-200',
+              ]"
+            >
+              {{ link.name }}
+            </a>
+          </div>
+          <div class="border-t border-base-200 px-4 py-3 space-y-2">
+            <slot name="mobile-actions">
+              <Button variant="default" class="w-full justify-center">
+                Sign in
+              </Button>
+              <Button variant="primary" gradient class="w-full justify-center">
+                Get Started
+              </Button>
+            </slot>
+          </div>
         </div>
-        <div class="border-t border-base-200 px-4 py-3 space-y-2">
-          <slot name="mobile-actions">
-            <Button variant="default" class="w-full justify-center">
-              Sign in
-            </Button>
-            <Button variant="primary" gradient class="w-full justify-center">
-              Get Started
-            </Button>
-          </slot>
-        </div>
-      </div>
+      </Transition>
     </nav>
   </header>
 </template>
+
+<style scoped>
+.expand-enter-active,
+.expand-leave-active {
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+}
+
+.expand-enter-from,
+.expand-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+  height: 0;
+}
+
+.expand-enter-to,
+.expand-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+  height: var(--expand-height);
+}
+</style>
