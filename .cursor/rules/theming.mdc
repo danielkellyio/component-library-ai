@@ -6,9 +6,106 @@ alwaysApply: true
 ## Component Styles/Theming
 - Use inline tailwind classes to style. NEVER use @apply. If you need to use a tailwind color in the style section you can do so with a css custom property like this: var(--color-primary)
 - Backgrounds colored with brand or status theme colors should use the proper class as defined in theme.css (for example: .bg-primary)
-- All components with brand or theme backgrounds should also support a gradient prop (in which case the corresponding `-bg-gradient` class should be used to style the background)
-- Text color classes should always be used based on the background colors of the element the text exists in (for example, .primary-bg should ALWAYS have `primary-content`)
-- Only brand and status colors have dedicated classes in @theme.css (like primary-content), for all others the generated tailwind classes based on the theme variables should be used
-- When setting backgrounds with theme and status colors do NOT alter their opacity.
-- For elements with a brand or status theme background color add a border-1 around it with the main color at 50% opacity like `bg-primary/50`
-- container queries are built into Tailwind v4
+- ALWAYS read @assets/theme.css to understand available design tokens.
+- prefer container queries over media queries for making the site responsive
+- container queries are built into Tailwind v4 - https://raw.githubusercontent.com/tailwindlabs/tailwindcss.com/refs/heads/main/src/docs/responsive-design.mdx
+
+# .cursor/rules
+
+## 🎨 Design System Overview
+
+This project defines a **dark-mode-first**, techy and futuristic design system aimed at **indie developers** building a new social media platform. It uses **TailwindCSS v4 theming**, **Reka UI**, and **VueUse Motion**.
+
+---
+
+## 🌑 Theme: Dark Mode Only
+
+This system assumes dark mode is the default and only mode. Backgrounds, shadows, and borders are optimized for high contrast on dark surfaces.
+
+---
+
+## 🎯 Target Audience
+
+- Indie web developers
+- Designers who build
+- Makers and community builders
+
+---
+
+## 🎨 Design Tokens
+
+### Colors
+
+- `--color-primary`: Electric Purple `#6f00ff`
+- `--color-secondary`: Neon Cyan `#00e0ff`
+- `--color-bg`: Darkest surface `#0a0a0f`
+- `--color-surface`: UI panels `#191933`
+- `--color-border`: Soft borders `#2a2a40`
+- `--color-muted`: Muted text `#6b7280`
+- `--color-accent`: Vibrant accent `#8b5cf6`
+
+### Typography
+
+- `--font-heading`: `Inter`, sans-serif
+- `--font-body`: `Inter`, sans-serif
+- Bold, loud heading sizes and generous line height for rhythm
+
+### Spacing Scale
+
+| Token     | Value   |
+|-----------|---------|
+| `--space-xs` | 0.5rem |
+| `--space-sm` | 1rem   |
+| `--space-md` | 1.5rem |
+| `--space-lg` | 2rem   |
+| `--space-xl` | 3rem   |
+| `--space-2xl`| 4rem   |
+
+### Radius
+
+- `--radius-sm`: 6px
+- `--radius-md`: 12px
+- `--radius-lg`: 24px
+- `--radius-full`: 9999px (for pills or avatars)
+
+### Shadow
+
+- `--shadow-glow`: `0 0 8px #6f00ff, 0 0 16px #00e0ff`
+
+### Gradients
+
+- `--gradient-primary`: Linear blend from electric purple to cyan
+- `--gradient-card`: Dimmed variation for backgrounds
+
+### Z-Index
+
+| Layer    | Token         | Value |
+|----------|---------------|-------|
+| Dropdown | `--z-dropdown`| 1000  |
+| Modal    | `--z-modal`   | 1100  |
+| Popover  | `--z-popover` | 1200  |
+| Toast    | `--z-toast`   | 1300  |
+
+---
+
+## 🧩 Component Strategy
+
+- **Component Library**: Reka UI (unstyled primitives)
+- **Motion Library**: VueUse Motion (custom transitions) - https://context7.com/vueuse/motion/llms.txt
+- **Grid System**: 12-column layout for page structure
+
+---
+
+## 🛠️ Tooling & Theming
+
+- TailwindCSS 4 + `theme.extend` integration
+- All tokens defined via `:root` CSS variables
+- Works seamlessly with utility-first and component-scoped styling
+
+---
+
+## 🧪 Dev Notes
+
+- Keep the system modular and light
+- Encourage experimentation in gradients, shadows, and composition
+- Use Tailwind layers and safelist if extending components
