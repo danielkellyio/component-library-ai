@@ -5,7 +5,7 @@ alwaysApply: true
 ---
 # Project Specs
 
-This project is a beautiful component library built specifically for Nuxt. It uses the unstyled, primitive component library Reka (formerly Radix Vue) under the hood for most components. Lookup info about RekaUI with their documentation found here: https://context7.com/unovue/reka-ui/llms.txt
+This project is a beautiful component library built specifically for Nuxt. It uses the unstyled, primitive component library Reka under the hood for most components. Lookup info about RekaUI with their documentation found here: https://context7.com/unovue/reka-ui/llms.txt. If there is NO Reka UI component available for a given need, no problem, create the component from scratch.
 
 The component library is meant for use in the tech space and so should be modern and include cutting edge designs and features.
 
