@@ -14,11 +14,21 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/scripts",
     "@nuxt/test-utils",
-    "reka-ui",
+    "reka-ui/nuxt",
     "@vueuse/nuxt",
     "@vueuse/motion/nuxt",
   ],
   vite: {
     plugins: [tailwindcss()],
+  },
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          // Theme used in all color schemes.
+          theme: "github-dark",
+        },
+      },
+    },
   },
 });

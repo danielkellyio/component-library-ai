@@ -8,6 +8,7 @@
   --color-secondary-foreground: #000000;
 
   --color-bg: #0a0a0f;
+  --color-text: #ffffff;
   --color-bg-soft: #111122;
   --color-surface: #191933;
   --color-border: #2a2a40;
@@ -52,6 +53,7 @@
   --color-secondary: var(--color-secondary);
   --color-secondary-foreground: var(--color-secondary-foreground);
 
+  --color-text: var(--color-text);
   --color-bg: var(--color-bg);
   --color-bg-soft: var(--color-bg-soft);
   --color-surface: var(--color-surface);

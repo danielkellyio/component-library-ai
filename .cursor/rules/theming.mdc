@@ -43,6 +43,7 @@ This system assumes dark mode is the default and only mode. Backgrounds, shadows
 - `--color-border`: Soft borders `#2a2a40`
 - `--color-muted`: Muted text `#6b7280`
 - `--color-accent`: Vibrant accent `#8b5cf6`
+- `--color-text`: White text on dark background
 
 ### Typography
 

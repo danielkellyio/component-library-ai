@@ -1,2 +1,7 @@
-@import 'tailwindcss';
-@import './theme.css';
+@import "tailwindcss";
+@import "./theme.css";
+@plugin "@tailwindcss/typography";
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
