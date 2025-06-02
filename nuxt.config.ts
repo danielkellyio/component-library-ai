@@ -20,11 +20,5 @@ export default defineNuxtConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
-    resolve: {
-      alias: {
-        "@tanstack/vue-virtual/dist/esm":
-          "@tanstack/vue-virtual/dist/esm/index.js",
-      },
-    },
   },
 });
