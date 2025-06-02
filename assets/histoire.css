@@ -1,0 +1,4 @@
+[data-test-id="sandbox-render"] {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+}

@@ -18,9 +18,7 @@ const sizes = ["sm", "md", "lg"] as const;
 <template>
   <Story :title="story.title" :layout="{ type: 'grid', width: 500 }">
     <Variant title="All Variants">
-      <div
-        class="flex flex-wrap items-start gap-4 p-4 bg-bg-soft rounded-lg shadow-md"
-      >
+      <div class="flex flex-wrap items-start gap-4 p-4 rounded-lg shadow-md">
         <Button v-for="variant in variants" :key="variant" :variant="variant">
           {{ variant.charAt(0).toUpperCase() + variant.slice(1) }} Button
         </Button>
@@ -28,9 +26,7 @@ const sizes = ["sm", "md", "lg"] as const;
     </Variant>
 
     <Variant title="All Sizes">
-      <div
-        class="flex flex-wrap items-center gap-4 p-4 bg-bg-soft rounded-lg shadow-md"
-      >
+      <div class="flex flex-wrap items-center gap-4 p-4 rounded-lg shadow-md">
         <Button v-for="size in sizes" :key="size" :size="size">
           {{ size.toUpperCase() }} Button
         </Button>
@@ -38,9 +34,7 @@ const sizes = ["sm", "md", "lg"] as const;
     </Variant>
 
     <Variant title="States">
-      <div
-        class="flex flex-wrap items-start gap-4 p-4 bg-bg-soft rounded-lg shadow-md"
-      >
+      <div class="flex flex-wrap items-start gap-4 p-4 rounded-lg shadow-md">
         <Button loading>Loading...</Button>
         <Button disabled>Disabled Button</Button>
       </div>
@@ -49,7 +43,7 @@ const sizes = ["sm", "md", "lg"] as const;
     <!-- Uncomment and adjust if you have an Icon component -->
     <!--
     <Variant title="With Icons">
-      <div class="flex flex-wrap items-start gap-4 p-4 bg-bg-soft rounded-lg shadow-md">
+      <div class="flex flex-wrap items-start gap-4 p-4  rounded-lg shadow-md">
         <Button>
           <Icon name="heroicons:plus-solid" class="w-5 h-5 mr-2" />
           Add Item
@@ -67,9 +61,7 @@ const sizes = ["sm", "md", "lg"] as const;
     -->
 
     <Variant title="As Child (using a div)">
-      <div
-        class="flex flex-wrap items-start gap-4 p-4 bg-bg-soft rounded-lg shadow-md"
-      >
+      <div class="flex flex-wrap items-start gap-4 p-4 rounded-lg shadow-md">
         <Button as-child>
           <div
             class="bg-accent text-white p-3 rounded-lg cursor-pointer hover:bg-accent/90"
@@ -81,7 +73,7 @@ const sizes = ["sm", "md", "lg"] as const;
     </Variant>
 
     <Variant title="Primary Variant States">
-      <div class="p-4 bg-bg-soft rounded-lg shadow-md space-y-4">
+      <div class="p-4 rounded-lg shadow-md space-y-4">
         <h3 class="text-lg font-semibold text-white mb-2">Primary</h3>
         <div class="flex flex-wrap items-start gap-4">
           <Button variant="primary">Normal</Button>
@@ -92,7 +84,7 @@ const sizes = ["sm", "md", "lg"] as const;
     </Variant>
 
     <Variant title="Secondary Variant States">
-      <div class="p-4 bg-bg-soft rounded-lg shadow-md space-y-4">
+      <div class="p-4 rounded-lg shadow-md space-y-4">
         <h3 class="text-lg font-semibold text-white mb-2">Secondary</h3>
         <div class="flex flex-wrap items-start gap-4">
           <Button variant="secondary">Normal</Button>
@@ -103,7 +95,7 @@ const sizes = ["sm", "md", "lg"] as const;
     </Variant>
 
     <Variant title="Outline Variant States">
-      <div class="p-4 bg-bg-soft rounded-lg shadow-md space-y-4">
+      <div class="p-4 rounded-lg shadow-md space-y-4">
         <h3 class="text-lg font-semibold text-white mb-2">Outline</h3>
         <div class="flex flex-wrap items-start gap-4">
           <Button variant="outline">Normal</Button>
@@ -114,7 +106,7 @@ const sizes = ["sm", "md", "lg"] as const;
     </Variant>
 
     <Variant title="Ghost Variant States">
-      <div class="p-4 bg-bg-soft rounded-lg shadow-md space-y-4">
+      <div class="p-4 rounded-lg shadow-md space-y-4">
         <h3 class="text-lg font-semibold text-white mb-2">Ghost</h3>
         <div class="flex flex-wrap items-start gap-4">
           <Button variant="ghost">Normal</Button>
@@ -128,7 +120,7 @@ const sizes = ["sm", "md", "lg"] as const;
 
 <style scoped>
 /* Add any story-specific styles here if needed */
-.bg-bg-soft {
+. {
   background-color: var(--color-bg-soft);
 }
 .text-white {

@@ -34,10 +34,11 @@
   --radius-full: 9999px;
 
   /* Shadow */
-  --shadow-glow: 0 0 8px #6f00ff, 0 0 16px #00e0ff;
+  --shadow-glow: 0 0 12px rgba(111, 0, 255, 0.15),
+    0 0 24px rgba(114, 7, 190, 0.1);
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #6f00ff 0%, #00e0ff 100%);
+  --gradient-primary: linear-gradient(135deg, #6f00ff 0%, #7207be 100%);
   --gradient-card: linear-gradient(145deg, #191933, #0f0f1f);
 
   /* Z-index */
