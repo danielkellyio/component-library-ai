@@ -6,7 +6,7 @@ alwaysApply: true
 ## Component Styles/Theming
 - Use inline tailwind classes to style. NEVER use @apply. If you need to use a tailwind color in the style section you can do so with a css custom property like this: var(--color-primary)
 - Backgrounds colored with brand or status theme colors should use the proper class as defined in theme.css (for example: .bg-primary)
-- ALWAYS read @assets/theme.css to understand available design tokens.
+- ALWAYS read @/assets/theme.css to understand available design tokens.
 - prefer container queries over media queries for making the site responsive
 - container queries are built into Tailwind v4 - https://raw.githubusercontent.com/tailwindlabs/tailwindcss.com/refs/heads/main/src/docs/responsive-design.mdx
 
