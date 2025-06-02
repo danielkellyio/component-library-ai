@@ -3,6 +3,17 @@ description:
 globs: **/*.story.vue
 alwaysApply: false
 ---
+Component stories are created with Histoire. 
+
+You can find more info about creating stories with histoire via the following links:
+* Getting Started - https://raw.githubusercontent.com/histoire-dev/histoire/refs/heads/main/docs/guide/vue3/getting-started.md
+* How to write stories - https://raw.githubusercontent.com/histoire-dev/histoire/refs/heads/main/docs/guide/vue3/stories.md
+* State and Controls - https://raw.githubusercontent.com/histoire-dev/histoire/refs/heads/main/docs/guide/vue3/controls.md
+* Documentation - https://raw.githubusercontent.com/histoire-dev/histoire/refs/heads/main/docs/guide/vue3/docs.md
+* Events - https://raw.githubusercontent.com/histoire-dev/histoire/refs/heads/main/docs/guide/vue3/events.md
+* Hierarchy - https://raw.githubusercontent.com/histoire-dev/histoire/refs/heads/main/docs/guide/vue3/hierarchy.md
+* Wrapper - https://raw.githubusercontent.com/histoire-dev/histoire/refs/heads/main/docs/guide/vue3/wrapper.md
+
 Example of a component story:
 
 ```html
