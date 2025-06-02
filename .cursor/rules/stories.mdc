@@ -1,6 +1,6 @@
 ---
-description: 
-globs: **/*.story.vue
+description: rules for writing stories
+globs: 
 alwaysApply: false
 ---
 Component stories are created with Histoire. 

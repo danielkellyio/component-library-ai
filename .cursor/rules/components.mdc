@@ -1,6 +1,6 @@
 ---
-description: 
-globs: **/*.vue
+description: Rules for creating components
+globs: 
 alwaysApply: false
 ---
 

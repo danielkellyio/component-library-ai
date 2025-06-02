@@ -5,7 +5,7 @@ alwaysApply: false
 ---
 Follow this workflow for all NEW components and/or blocks
 
-1. Create a task list to manage component workflow
+1. Create a task list to manage component workflow ([task-list.mdc](mdc:.cursor/rules/task-list.mdc))
 2. Think about the current design system and sample a few existing components for inspiration
 3. Implement the component defintion ([components.mdc](mdc:.cursor/rules/components.mdc))
 4. Write a story for the component with histoire ([stories.mdc](mdc:.cursor/rules/stories.mdc))
