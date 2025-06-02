@@ -1,6 +1,6 @@
 ---
 name: Navbar
-description: The `Navbar` component is a flexible, unopinionated base for creating various navigation bar layouts. It provides `start`, `center`, and `end` slots to structure content, and can also generate navigation links from a `links` prop.
+description: The `Navbar` component is a flexible, unopinionated base for creating various navigation bar layouts.
 ---
 
 ## Features

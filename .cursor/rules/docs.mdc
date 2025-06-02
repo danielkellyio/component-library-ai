@@ -4,3 +4,8 @@ globs:
 alwaysApply: false
 ---
 Docs are always written in `content/components` and `content/blocks`
+
+Their frontmatter includes:
+
+* name - The component name
+* description - A short sentence description of the component 

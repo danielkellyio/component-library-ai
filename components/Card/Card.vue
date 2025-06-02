@@ -23,7 +23,7 @@ const delegatedProps = computed(() => {
   <Primitive
     :as="as"
     :as-child="asChild"
-    :class="['rounded border bg-card text-card-foreground ', props.class]"
+    :class="['rounded-md border bg-card text-card-foreground ', props.class]"
     v-bind="delegatedProps"
   >
     <div class="p-6">

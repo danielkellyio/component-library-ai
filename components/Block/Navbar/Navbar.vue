@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Navbar from "~/components/Navbar/Navbar.vue"; // Path to the generic Navbar
-
 // Props for BlockNavbar, if any, would be defined here.
 // For this example, we're keeping it simple and relying on slots of the generic Navbar.
 </script>
@@ -8,7 +6,7 @@ import Navbar from "~/components/Navbar/Navbar.vue"; // Path to the generic Navb
 <template>
   <Navbar>
     <template #start>
-      <!-- Logo Slot Content for BlockNavbar -->
+      <!-- Logo Slot Content for BlockNUiavbar -->
       <slot name="logo">
         <NuxtLink to="/" class="text-text text-xl font-bold"
           >BlockLogo</NuxtLink

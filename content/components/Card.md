@@ -1,10 +1,7 @@
 ---
-title: Card
+name: Card
 description: A versatile card component for displaying content in a structured layout.
 ---
-
-::card-example
-:::
 
 ## Overview
 
