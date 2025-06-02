@@ -1,0 +1,6 @@
+---
+description: Rules for writing documentation
+globs: 
+alwaysApply: false
+---
+Docs are always written in `content/components` and `content/blocks`
