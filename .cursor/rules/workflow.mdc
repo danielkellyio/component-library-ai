@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+Follow this workflow for all NEW components and/or blocks
+
+1. Create a task list to manage component workflow
+2. Think about the current design system and sample a few existing components for inspiration
+3. Implement the component defintion
+4. Write a story for the component
+5. Write documentation for the component

@@ -1,7 +1,7 @@
 ---
 description: 
-globs: 
-alwaysApply: true
+globs: **/*.vue
+alwaysApply: false
 ---
 
 # Component Rules
