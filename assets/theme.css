@@ -1,226 +1,86 @@
-/* Claude Theme Design Tokens */
 @import "tailwindcss";
 
-/* NOTE: ALL THEME VARIABLES ENDING WITH -content ARE FOR TEXT COLORS ON BACKGROUNDS THAT CORRESPOND TO THE VARIABLE NAME WITHOUT THE -content SUFFIX */
-
-/* Light Theme */
-@theme {
-  /* ===== BASE TOKENS: FOR COLORING MOST BACKGROUNDS (NEUTRAL AND THE BULK OF THE PAGE CANVAS) ===== */
-  --color-base-100: oklch(0.98 0 0);
-  --color-base-200: oklch(0.92 0 0);
-  --color-base-300: oklch(0.85 0 0);
-  --color-base-content: oklch(20% 0.05 240);
-
-  /* ===== PRIMARY BRAND COLORS: FOR COLORING PRIMARY ELEMENTS (BUTTONS, LINKS, ETC.) ===== */
-  --color-primary: oklch(0.59 0.2099 25.05); /* Red*/
-  --color-primary-gradient-mix: oklch(0.59 0.1716 42.13); /* Orange*/
-  --color-primary-content: oklch(100% 0 0);
-
-  /* ===== SECONDARY BRAND COLORS: FOR PROVIDING CONTRAST TO PRIMARY BRAND COLORS MOSTLY FOR ACCENTS (USE SPARINGLY) ===== */
-  --color-secondary: oklch(70% 0.25 30);
-  --color-secondary-gradient-mix: oklch(70% 0.25 280);
-  --color-secondary-content: oklch(98% 0.01 200);
-
-  /* ===== NEUTRAL COLORS: FOR COLORING LESS IMPORTANT ELEMENTS IN COMPARISON TO PRIMARY AND SECONDARY BRAND COLORS (FOR EXAMPLE: CANCEL BUTTONS) ===== */
-  --color-neutral: oklch(50% 0.05 240);
-  --color-neutral-gradient-mix: oklch(50% 0.05 280);
-  --color-neutral-content: oklch(98% 0.01 240);
-
-  /* ===== INFO STATUS COLORS: FOR COLORING INFO ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-info: oklch(0.64 0.07 223.52);
-  --color-info-gradient-mix: oklch(0.36 0.08 283.82);
-  --color-info-content: oklch(1 0.05 208.08);
-
-  /* ===== SUCCESS STATUS COLORS: FOR COLORING SUCCESS ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-success: oklch(0.62 0.14 134.46);
-  --color-success-gradient-mix: oklch(0.53 0.08 178.62);
-  --color-success-content: oklch(1 0.07 134.7);
-
-  /* ===== WARNING STATUS COLORS: FOR COLORING WARNING ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-warning: oklch(0.8 0.17 75.8);
-  --color-warning-gradient-mix: oklch(0.59 0.1986 30.85);
-  --color-warning-content: oklch(1 0 0);
-
-  /* ===== ERROR STATUS COLORS: FOR COLORING ERROR ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-error: oklch(0.64 0.23 25.37);
-  --color-error-gradient-mix: oklch(0.36 0.15 12.35);
-  --color-error-content: oklch(1 0 25.31);
-}
-
 :root {
-  --brand-status-bg-border-width: 1px;
+  /* Colors */
+  --color-primary: #6f00ff; /* electric purple */
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #00e0ff; /* neon cyan */
+  --color-secondary-foreground: #000000;
+
+  --color-bg: #0a0a0f;
+  --color-bg-soft: #111122;
+  --color-surface: #191933;
+  --color-border: #2a2a40;
+  --color-muted: #6b7280;
+  --color-accent: #8b5cf6;
+
+  /* Fonts */
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Spacing (based on generous rhythm) */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-glow: 0 0 8px #6f00ff, 0 0 16px #00e0ff;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #6f00ff 0%, #00e0ff 100%);
+  --gradient-card: linear-gradient(145deg, #191933, #0f0f1f);
+
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-modal: 1100;
+  --z-popover: 1200;
+  --z-toast: 1300;
 }
 
-/* Dark Theme Overrides */
-[data-theme="dark"],
-.htw-dark {
-  --color-base-100: oklch(25.33% 0.016 252.42);
-  --color-base-200: oklch(23.26% 0.014 253.1);
-  --color-base-300: oklch(21.15% 0.012 254.09);
-  --color-base-content: oklch(97.807% 0.029 256.847);
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-foreground);
 
-  /* ===== NEUTRAL COLORS: FOR COLORING LESS IMPORTANT ELEMENTS IN COMPARISON TO PRIMARY AND SECONDARY BRAND COLORS (FOR EXAMPLE: CANCEL BUTTONS) ===== */
-  --color-neutral: oklch(50% 0.05 240);
-  --color-neutral-gradient-mix: oklch(50% 0.05 280);
-  --color-neutral-content: oklch(98% 0.01 240);
+  --color-bg: var(--color-bg);
+  --color-bg-soft: var(--color-bg-soft);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
 
-  /* ===== INFO STATUS COLORS: FOR COLORING INFO ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-info: oklch(0.42 0.05 223.69);
-  --color-info-gradient-mix: oklch(0.36 0.08 283.82);
-  --color-info-content: oklch(0.95 0.05 208.08);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
 
-  /* ===== SUCCESS STATUS COLORS: FOR COLORING SUCCESS ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-success: oklch(0.54 0.1 134.01);
-  --color-success-gradient-mix: oklch(0.53 0.08 178.62);
-  --color-success-content: oklch(0.97 0.07 134.7);
+  --space-xs: var(--space-xs);
+  --space-sm: var(--space-sm);
+  --space-md: var(--space-md);
+  --space-lg: var(--space-lg);
+  --space-xl: var(--space-xl);
+  --space-2xl: var(--space-2xl);
 
-  /* ===== WARNING STATUS COLORS: FOR COLORING WARNING ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-warning: oklch(0.72 0.17 72.65);
-  --color-warning-gradient-mix: oklch(0.59 0.1986 30.85);
-  --color-warning-content: oklch(1 0 0);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-full: var(--radius-full);
 
-  /* ===== ERROR STATUS COLORS: FOR COLORING ERROR ELEMENTS (ALERTS, BANNERS, BADGES, ETC.) ===== */
-  --color-error: oklch(0.56 0.21 25.87);
-  --color-error-gradient-mix: oklch(0.36 0.15 12.35);
-  --color-error-content: oklch(1 0.06 25.31);
-}
+  --shadow-glow: var(--shadow-glow);
 
-.success-bg {
-  background-color: var(--color-success);
-  border-color: color-mix(in oklch, var(--color-success), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
+  --gradient-primary: var(--gradient-primary);
+  --gradient-card: var(--gradient-card);
 
-.success-content {
-  color: var(--color-success-content);
-}
-
-.success-bg-gradient {
-  background: linear-gradient(
-    to right,
-    var(--color-success),
-    var(--color-success-gradient-mix)
-  );
-  border-color: color-mix(in oklch, var(--color-success), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.warning-bg {
-  background-color: var(--color-warning);
-  border-color: color-mix(in oklch, var(--color-warning), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.warning-content {
-  color: var(--color-warning-content);
-}
-
-.warning-bg-gradient {
-  background: linear-gradient(
-    to right,
-    var(--color-warning),
-    var(--color-warning-gradient-mix)
-  );
-  border-color: color-mix(in oklch, var(--color-warning), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.error-bg {
-  background-color: var(--color-error);
-  border-color: color-mix(in oklch, var(--color-error), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.error-content {
-  color: var(--color-error-content);
-}
-
-.error-bg-gradient {
-  background: linear-gradient(
-    to right,
-    var(--color-error),
-    var(--color-error-gradient-mix)
-  );
-  border-color: color-mix(in oklch, var(--color-error), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.info-bg {
-  background-color: var(--color-info);
-  border-color: color-mix(in oklch, var(--color-info), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.info-content {
-  color: var(--color-info-content);
-}
-
-.info-bg-gradient {
-  background: linear-gradient(
-    to right,
-    var(--color-info),
-    var(--color-info-gradient-mix)
-  );
-  border-color: color-mix(in oklch, var(--color-info), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.primary-bg {
-  background-color: var(--color-primary);
-}
-
-.primary-content {
-  color: var(--color-primary-content);
-  border-color: color-mix(in oklch, var(--color-primary), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.primary-bg-gradient {
-  background: linear-gradient(
-    to right,
-    var(--color-primary),
-    var(--color-primary-gradient-mix)
-  );
-  border-color: color-mix(in oklch, var(--color-primary), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.secondary-bg {
-  background-color: var(--color-secondary);
-}
-
-.secondary-content {
-  color: var(--color-secondary-content);
-  border-color: color-mix(in oklch, var(--color-secondary), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.secondary-bg-gradient {
-  background: linear-gradient(
-    to right,
-    var(--color-secondary),
-    var(--color-secondary-gradient-mix)
-  );
-  border-color: color-mix(in oklch, var(--color-secondary), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.neutral-bg {
-  background-color: var(--color-neutral);
-}
-
-.neutral-content {
-  color: var(--color-neutral-content);
-  border-color: color-mix(in oklch, var(--color-neutral), white 20%);
-  border-width: var(--brand-status-bg-border-width);
-}
-
-.neutral-bg-gradient {
-  background: linear-gradient(
-    to right,
-    var(--color-neutral),
-    var(--color-neutral-gradient-mix)
-  );
-  border-color: color-mix(in oklch, var(--color-neutral), white 20%);
-  border-width: var(--brand-status-bg-border-width);
+  --z-dropdown: var(--z-dropdown);
+  --z-modal: var(--z-modal);
+  --z-popover: var(--z-popover);
+  --z-toast: var(--z-toast);
 }

@@ -1,7 +1,7 @@
 ---
 description: 
-globs: components/**/*.vue
-alwaysApply: false
+globs: 
+alwaysApply: true
 ---
 
 # Component Rules
@@ -23,8 +23,8 @@ alwaysApply: false
 - If using a prop named class, make sure to alway reference it as `props.class` and NEVER just `class` in the template.
 - Each component should also include a histoire story in the same directory as it's defined
 
-- Always check [props.ts](mdc:types/props.ts) for commonly used props to keep our component API's consistent. If a new prop is needed for a newly created component that's likely to be needed across multiple components add it here. 
-- import props from [props.ts](mdc:types/props.ts) when possible for use in components.
+- Always check @/types/props.ts for commonly used props to keep our component API's consistent. If a new prop is needed for a newly created component that's likely to be needed across multiple components add it here. 
+- import props from @/types/props.ts when possible for use in components.
 
 - All more "generic" type components should exist at the root of the components directory. 
 
