@@ -1,4 +1,5 @@
-[data-test-id="sandbox-render"] {
+[data-test-id="sandbox-render"],
+[data-test-id="responsive-preview-bg"] {
   background-color: var(--color-bg) !important;
   color: var(--color-text) !important;
 }
