@@ -27,6 +27,8 @@ alwaysApply: false
 - import props from `types/props.ts` when possible for use in components.
 
 - All more "generic" type components should exist at the root of the components directory. 
+- Nuxt icon module is installed to use for displaying icons
+- Placeholder images can be used where relevant from lorempicusm (https://picsum.photos/[height as a number]/[width as a number])
 
 
 ## "Block" Components
