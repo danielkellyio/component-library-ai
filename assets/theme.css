@@ -2,6 +2,7 @@
 
 :root {
   /* Colors */
+  /* Use colors like bg-bg, bg-surface, text-text, text-muted, text-primary-foreground, border-primary, etc (these are just custom tailwind colors)/
   --color-primary: #6f00ff; /* electric purple */
   --color-primary-foreground: #ffffff;
   --color-secondary: #00e0ff; /* neon cyan */
@@ -9,43 +10,26 @@
 
   --color-bg: #11111e;
   --color-text: #ffffff;
-  --color-bg-soft: #111122;
+  --color-bg-soft: #19192d;
   --color-surface: #191933;
   --color-border: #2a2a40;
   --color-muted: #9faabe;
   --color-accent: #8b5cf6;
 
   /* Fonts */
+  /* Use font-heading, font-body, etc (these are just custom tailwind fonts) */
   --font-heading: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
 
-  /* Spacing (based on generous rhythm) */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-2xl: 4rem;
-
-  /* Radius */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 24px;
-  --radius-full: 9999px;
-
   /* Shadow */
+  /* Use as css variable var(--shadow-glow) */
   --shadow-glow: 0 0 12px rgba(111, 0, 255, 0.15),
     0 0 24px rgba(114, 7, 190, 0.1);
 
   /* Gradients */
+  /* Use as css variable var(--gradient-primary) */
   --gradient-primary: linear-gradient(135deg, #6f00ff 0%, #7207be 100%);
   --gradient-card: linear-gradient(145deg, #191933, #0f0f1f);
-
-  /* Z-index */
-  --z-dropdown: 1000;
-  --z-modal: 1100;
-  --z-popover: 1200;
-  --z-toast: 1300;
 }
 
 @theme {
@@ -64,26 +48,4 @@
 
   --font-heading: var(--font-heading);
   --font-body: var(--font-body);
-
-  --space-xs: var(--space-xs);
-  --space-sm: var(--space-sm);
-  --space-md: var(--space-md);
-  --space-lg: var(--space-lg);
-  --space-xl: var(--space-xl);
-  --space-2xl: var(--space-2xl);
-
-  --radius-sm: var(--radius-sm);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
-  --radius-full: var(--radius-full);
-
-  --shadow-glow: var(--shadow-glow);
-
-  --gradient-primary: var(--gradient-primary);
-  --gradient-card: var(--gradient-card);
-
-  --z-dropdown: var(--z-dropdown);
-  --z-modal: var(--z-modal);
-  --z-popover: var(--z-popover);
-  --z-toast: var(--z-toast);
 }
