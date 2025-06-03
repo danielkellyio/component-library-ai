@@ -36,10 +36,37 @@ interface ListItem {
 
 ## Slots
 
-### `item` (default)
+| Name             | Props                | Description                                                                                                                                                       |
+| ---------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `item` (default) | `{ item: ListItem }` | Allows custom rendering for each item in the list. If an `item` object in the `items` prop has a `slot` property, it will try to use a slot with that name first. |
 
-- **Scope**: `{ item: ListItem }`
-- **Description**: Allows custom rendering for each item in the list. If an `item` object in the `items` prop has a `slot` property, it will try to use a slot with that name first.
+## Events
+
+| Event               | Payload                                                 | Description                                                              |
+| ------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `update:modelValue` | `string \| number \| (string \| number)[] \| undefined` | Emitted when the selected value(s) change. Used implicitly by `v-model`. |
+
+## Basic Usage
+
+```vue
+<script setup>
+const items = [
+  { id: "1", label: "Apple", value: "apple" },
+  { id: "2", label: "Banana", value: "banana" },
+  { id: "3", label: "Orange", value: "orange", disabled: true },
+];
+const selectedFruit = ref("banana");
+</script>
+
+<template>
+  <ListBox :items="items" v-model="selectedFruit" />
+  <p>Selected: {{ selectedFruit }}</p>
+</template>
+```
+
+## More Examples
+
+### Custom Item Rendering via `item` Slot
 
 **Example Usage:**
 
@@ -66,26 +93,4 @@ If you define `item.slot = 'customSlotName'` in your items array, you can target
     <span>{{ item.label }}</span>
   </template>
 </ListBox>
-```
-
-## Events
-
-- **`update:modelValue`**: Emitted when the selected value(s) change. Used implicitly by `v-model`.
-
-## Basic Usage
-
-```vue
-<script setup>
-const items = [
-  { id: "1", label: "Apple", value: "apple" },
-  { id: "2", label: "Banana", value: "banana" },
-  { id: "3", label: "Orange", value: "orange", disabled: true },
-];
-const selectedFruit = ref("banana");
-</script>
-
-<template>
-  <ListBox :items="items" v-model="selectedFruit" />
-  <p>Selected: {{ selectedFruit }}</p>
-</template>
 ```

@@ -44,7 +44,9 @@ It is built using the Reka UI `Primitive` component, ensuring it can be rendered
 </template>
 ```
 
-## Styling
+## All Other Examples
+
+### Styling
 
 The Card component comes with default styling that aligns with the project's design system:
 

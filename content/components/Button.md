@@ -3,15 +3,37 @@ name: Button
 description: The Button component provides a clickable element that can be used to trigger actions or navigate.
 ---
 
-## Import
+## Overview
+
+The Button component is a fundamental interactive element used to trigger actions, submit forms, or navigate. It supports various visual styles (variants), sizes, and states like disabled and loading, making it adaptable to different UI contexts.
+
+## Props
+
+| Prop       | Type                                                       | Default       | Description                                                            |
+| ---------- | ---------------------------------------------------------- | ------------- | ---------------------------------------------------------------------- |
+| `variant`  | `\'primary\' \| \'secondary\' \| \'outline\' \| \'ghost\'` | `\'primary\'` | The visual style of the button.                                        |
+| `size`     | `\'sm\' \| \'md\' \| \'lg\'`                               | `\'md\'`      | The size of the button.                                                |
+| `asChild`  | `boolean`                                                  | `false`       | Whether to render the button as a child element, inheriting its props. |
+| `disabled` | `boolean`                                                  | `false`       | Whether the button is disabled and cannot be interacted with.          |
+| `loading`  | `boolean`                                                  | `false`       | Whether the button is in a loading state, typically showing a spinner. |
+| `class`    | `string`                                                   | `\'\'`        | Additional CSS classes to apply to the button.                         |
+
+## Slots
+
+| Name      | Description                                                                   |
+| --------- | ----------------------------------------------------------------------------- |
+| `default` | The main content of the button, typically text or an icon.                    |
+| `loading` | Content to display when the `loading` prop is true. Defaults to "Loading...". |
+
+## Basic Usage
+
+First, import the component:
 
 ```vue
 <script setup lang="ts">
 import Button from "~/components/Button/Button.vue";
 </script>
 ```
-
-## Usage
 
 Basic usage of the Button component:
 
@@ -21,25 +43,7 @@ Basic usage of the Button component:
 </template>
 ```
 
-## Props
-
-| Prop       | Type                                               | Default     | Description                                                            |
-| ---------- | -------------------------------------------------- | ----------- | ---------------------------------------------------------------------- |
-| `variant`  | `'primary' \| 'secondary' \| 'outline' \| 'ghost'` | `'primary'` | The visual style of the button.                                        |
-| `size`     | `'sm' \| 'md' \| 'lg'`                             | `'md'`      | The size of the button.                                                |
-| `asChild`  | `boolean`                                          | `false`     | Whether to render the button as a child element, inheriting its props. |
-| `disabled` | `boolean`                                          | `false`     | Whether the button is disabled and cannot be interacted with.          |
-| `loading`  | `boolean`                                          | `false`     | Whether the button is in a loading state, typically showing a spinner. |
-| `class`    | `string`                                           | `''`        | Additional CSS classes to apply to the button.                         |
-
-## Slots
-
-| Name      | Description                                                                   |
-| --------- | ----------------------------------------------------------------------------- |
-| `default` | The main content of the button, typically text or an icon.                    |
-| `loading` | Content to display when the `loading` prop is true. Defaults to "Loading...". |
-
-## Examples
+## All Other Examples
 
 ### Variants
 
@@ -84,7 +88,7 @@ Basic usage of the Button component:
 
 ### As Child
 
-This allows you to use a custom element (like a `div` or `NuxtLink`) as the button, while still applying the button's styling and behavior.
+This allows you to use a custom element (like a `div` or `NuxtLink`) as the button, while still applying the button\'s styling and behavior.
 
 ```vue
 <template>

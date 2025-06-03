@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     "reka-ui/nuxt",
     "@vueuse/nuxt",
     "@vueuse/motion/nuxt",
+    "nuxt-llms",
   ],
   vite: {
     plugins: [tailwindcss()],
@@ -31,5 +32,10 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  llms: {
+    domain: "http://localhost:3000",
+    title: "Cool Component Library",
+    description: "A cool component library",
   },
 });

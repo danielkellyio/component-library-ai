@@ -3,6 +3,7 @@ description: Rules for writing documentation
 globs: 
 alwaysApply: false
 ---
+## General 
 Docs are always written in `content/components` and `content/blocks`
 
 Their frontmatter includes:
@@ -11,3 +12,12 @@ Their frontmatter includes:
 * description - A short sentence description of the component 
 
 Do NOT include an h1 (#) in the body
+
+## Order of Sections
+
+* General Overview
+* Props - table of props (columns - Prop, Type, Default, Description)
+* Slots - table of slots (columns - Name, Props, Description)
+* Events - table of events (columns - Event, Payload, Description)
+* Basic Usage
+* More Examples

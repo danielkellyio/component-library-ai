@@ -3,25 +3,7 @@ name: Navbar
 description: The Navbar component provides a responsive and customizable navigation bar for your application.
 ---
 
-## Import
-
-```vue
-<script setup lang="ts">
-import Navbar from "~/components/Block/Navbar/Navbar.vue";
-</script>
-```
-
-## Usage
-
-Basic usage of the Navbar component:
-
-```vue
-<template>
-  <Navbar />
-</template>
-```
-
-## Features
+## Overview
 
 - Dark mode first, tech-focused design.
 - Customizable logo, navigation links, and user profile sections via slots.
@@ -42,7 +24,25 @@ This component currently does not accept any props. Behavior and content are pri
 | `links`        | Used to define the navigation links. Expected content is typically a `<ul>` of `<li>` elements containing `<a>` tags. |
 | `user-profile` | For adding user-related information or actions, like a user avatar, name, or logout button.                           |
 
-## Examples
+## Basic Usage
+
+First, import the component:
+
+```vue
+<script setup lang="ts">
+import Navbar from "~/components/Block/Navbar/Navbar.vue";
+</script>
+```
+
+Basic usage of the Navbar component:
+
+```vue
+<template>
+  <Navbar />
+</template>
+```
+
+## All Other Examples
 
 ### Customization Example
 
@@ -82,7 +82,7 @@ import Navbar from "~/components/Block/Navbar/Navbar.vue";
 </script>
 ```
 
-## Styling
+### Styling Information
 
 The Navbar uses the following CSS variables (design tokens) for its base styling:
 

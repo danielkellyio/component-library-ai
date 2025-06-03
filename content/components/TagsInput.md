@@ -3,9 +3,24 @@ name: TagsInput
 description: A component for inputting and managing a list of tags.
 ---
 
-## Usage
+## Overview
 
 The `TagsInput` component allows users to create a list of textual tags. Tags can be added by typing and then pressing Enter or comma, or when the input field loses focus. Existing tags can be removed by clicking a remove icon next to the tag or by pressing backspace in an empty input field.
+
+## Props
+
+| Prop          | Type       | Default            | Description                                                            |
+| ------------- | ---------- | ------------------ | ---------------------------------------------------------------------- |
+| `tags`        | `String[]` | `[]`               | An array of strings to be displayed as tags. Used for v-model binding. |
+| `placeholder` | `String`   | `\'Add a tag...\'` | Placeholder text for the input field.                                  |
+
+## Events
+
+| Event         | Payload    | Description                            |
+| ------------- | ---------- | -------------------------------------- |
+| `update:tags` | `String[]` | Emitted when the list of tags changes. |
+
+## Basic Usage
 
 ### Basic Example
 
@@ -18,6 +33,8 @@ The `TagsInput` component allows users to create a list of textual tags. Tags ca
 import TagsInput from "@/components/TagsInput.vue";
 </script>
 ```
+
+## More Examples
 
 ### With Initial Tags
 
@@ -38,7 +55,7 @@ const myTags = ref(["vue", "tailwind", "histoire"]);
 
 ### Custom Placeholder
 
-Customize the input field's placeholder text using the `placeholder` prop.
+Customize the input field\'s placeholder text using the `placeholder` prop.
 
 ```vue
 <template>
@@ -49,16 +66,3 @@ Customize the input field's placeholder text using the `placeholder` prop.
 import TagsInput from "@/components/TagsInput.vue";
 </script>
 ```
-
-## Props
-
-| Prop          | Type       | Default          | Description                                                            |
-| ------------- | ---------- | ---------------- | ---------------------------------------------------------------------- |
-| `tags`        | `String[]` | `[]`             | An array of strings to be displayed as tags. Used for v-model binding. |
-| `placeholder` | `String`   | `'Add a tag...'` | Placeholder text for the input field.                                  |
-
-## Events
-
-| Event         | Payload    | Description                            |
-| ------------- | ---------- | -------------------------------------- |
-| `update:tags` | `String[]` | Emitted when the list of tags changes. |
