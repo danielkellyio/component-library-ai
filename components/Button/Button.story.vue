@@ -2,9 +2,6 @@
 import type { Story } from "histoire";
 import Button from "./Button.vue"; // Assuming Button.vue is in the same directory
 
-// If you have an Icon component, import it here, otherwise remove or replace Icon related parts
-// import Icon from '../Icon/Icon.vue'; // Example path, adjust as necessary
-
 const story = {
   id: "components-button",
   title: "Components/Button",
@@ -41,9 +38,9 @@ const sizes = ["sm", "md", "lg"] as const;
     </Variant>
 
     <!-- Uncomment and adjust if you have an Icon component -->
-    <!--
+
     <Variant title="With Icons">
-      <div class="flex flex-wrap items-start gap-4 p-4  rounded-lg shadow-md">
+      <div class="flex flex-wrap items-start gap-4 p-4 rounded-lg shadow-md">
         <Button>
           <Icon name="heroicons:plus-solid" class="w-5 h-5 mr-2" />
           Add Item
@@ -58,7 +55,6 @@ const sizes = ["sm", "md", "lg"] as const;
         </Button>
       </div>
     </Variant>
-    -->
 
     <Variant title="As Child (using a div)">
       <div class="flex flex-wrap items-start gap-4 p-4 rounded-lg shadow-md">
