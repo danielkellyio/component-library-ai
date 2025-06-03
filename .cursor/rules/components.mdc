@@ -5,7 +5,8 @@ alwaysApply: false
 ---
 
 # Component Rules
-
+- When possible components should be built on top of Reka UI
+- Lookup info about RekaUI the context7 MCP 
 - All components should exist in the `/components` directory
 - They should be documented in the `/content/components` directory and mirror the file structure from the components directory
 - Each component should exist in it's own folder and be prefixed by it's folder name. The folder can also include sublementary components that are only meant for use within the slot of the main component. And example of this structure is as follows:
@@ -27,7 +28,7 @@ alwaysApply: false
 - import props from `types/props.ts` when possible for use in components.
 
 - All more "generic" type components should exist at the root of the components directory. 
-- Nuxt icon module is installed to use for displaying icons
+- Nuxt icon module is installed to use for displaying icons (it's auto-imported everywhere)
 - Placeholder images can be used where relevant from lorempicusm (https://picsum.photos/[height as a number]/[width as a number])
 
 

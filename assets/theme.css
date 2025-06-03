@@ -2,7 +2,7 @@
 
 :root {
   /* Colors */
-  /* Use colors like bg-bg, bg-surface, text-text, text-muted, text-primary-foreground, border-primary, etc (these are just custom tailwind colors)/
+  /* Use colors like bg-bg, bg-surface, text-text, text-muted, text-primary-foreground, border-primary, etc (these are just custom tailwind colors)/*/
   --color-primary: #6f00ff; /* electric purple */
   --color-primary-foreground: #ffffff;
   --color-secondary: #00e0ff; /* neon cyan */
