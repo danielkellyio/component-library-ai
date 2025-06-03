@@ -9,3 +9,5 @@ Their frontmatter includes:
 
 * name - The component name
 * description - A short sentence description of the component 
+
+Do NOT include an h1 (#) in the body
